@@ -5,13 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rackz Gallery v2 - Coming soon</title>
   <style>
+    input, button {
+      all: unset;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       margin: 0px;
       background-image: url(./assets/background.jpg);
       background-position: center;
       background-repeat: no-repeat;
-      background-size:cover;
+      background-size: cover;
     }
 
     .container {
@@ -52,6 +56,25 @@
 
     .footer form > * {
       padding: 5px;
+    }
+
+    .footer form input {
+      color: black;
+      background-color: white;
+    }
+
+    .footer form input:focus {
+      border: 1px solid black;
+    }
+
+    .footer form button {
+      color: black;
+      background-color: #a2887a;
+    }
+
+    .footer form button:hover {
+      color: white;
+      background-color: #1b191e;
     }
 
     @media (min-width: 640px) {
