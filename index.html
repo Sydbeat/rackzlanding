@@ -7,42 +7,80 @@
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
+      margin: 0px;
+      background-image: url(./assets/background.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .container {
       width: 100vw;
       height: 100vh;
-      background-color: #cac4b9;
-      background-image: url(./assets/background.jpeg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
+    }
+
+    .container > img {
+      margin-top: 20px;
     }
 
     .slogan {
-      text-transform: uppercase;
-      color: #fff;
+      color: white;
+      transform: rotate(-90deg) translateX(-100%);
       position: absolute;
-      top: 50%;
-      left: 60%;
-      width: 70vw;
-      transform: rotate(-90deg);;
+      top:0;
+      bottom:0;
+      right: -150px;
+      width: 320px;
+      height: 25px;
     }
 
     .footer {
-      color: #fff;
-      font-size: 0.60rem;
+      font-size: .50rem;
+      color: white;
       position: absolute;
-      top: 105%;
-      left: 0%;
-      width: 100%;
+      bottom: 5px;
       display: flex;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
+      width: 100%;
     }
+
+    .footer form {
+      margin-bottom: 5px;
+    }
+
+    .footer form > * {
+      padding: 5px;
+    }
+
+    @media (min-width: 640px) {
+      .footer {
+        font-size: .70rem;
+      }
+     }
+
+     @media (min-width: 768px) {
+      .footer {
+        font-size: 1rem;
+      }
+     }
   </style>
 </head>
 <body>
-  <img src="./assets/gallery-square.svg" width="121" >
-  <span class="slogan">Chaos make the muse.</span>
-  <div class="footer">
-    <span>Fall / Winter '23 available Oct. 16th 20h. CET at rackzgallery.com exclusively</span>
+  <div class="container">
+    <img src="./assets/gallery-square.svg" width="121">
+    <div class="slogan">
+      <span>Chaos make the muse.</span>
+    </div>
+    <div class="footer">
+      <div class="form">
+        <form>
+          <input type="email" placeholder="Let me know">
+          <button>by email</button>
+        </form>
+      </div>
+      <span>Fall / Winter '23 available Oct. 16th 20h. CET at rackzgallery.com exclusively</span>
+    </div>
   </div>
 </body>
 </html>
