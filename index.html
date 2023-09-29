@@ -141,37 +141,37 @@
   <script>
     const submit = async e => {
       e.preventDefault();
-      // const url = 'http://localhost:8000/mailchimp/rackz/join';
-      // const opts = {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify({ email_address: e.target.email.value })
-      // }
-      // const resp = await fetch(url, opts);
-      // if (resp.ok) {
-      //   console.log('done')
-      // } else {
-      //   console.log(await resp.json())
-      // }
-      confetti({
-        spread: 360,
-        ticks: 200,
-        gravity: 1,
-        decay: 0.94,
-        startVelocity: 30,
-        particleCount: 100,
-        scalar: 3,
-        shapes: ["image"],
-        shapeOptions: {
-          image: [
-            {
-              src: "./assets/logo.svg",
-              width: 32,
-              height: 32,
-            }
-          ]
-        }
-      });
+      const url = 'http://localhost:8000/mailchimp/rackz/join';
+      const opts = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email_address: e.target.email.value })
+      }
+      const resp = await fetch(url, opts);
+      if (resp.ok) {
+        confetti({
+          spread: 360,
+          ticks: 200,
+          gravity: 1,
+          decay: 0.94,
+          startVelocity: 30,
+          particleCount: 100,
+          scalar: 3,
+          shapes: ["image"],
+          shapeOptions: {
+            image: [
+              {
+                src: "./assets/logo.svg",
+                width: 32,
+                height: 32,
+              }
+            ]
+          }
+        });
+        e.target.email.value = undefined;
+      } else {
+        console.log(await resp.json())
+      }
     }
 
     window.addEventListener('load', function () {
