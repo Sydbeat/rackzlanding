@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rackz Gallery v2 - Coming soon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     input, button {
       all: unset;
@@ -11,23 +12,28 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      margin: 0px;
+      margin: 0;
+    }
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex-grow: 1;
       background-image: url(./assets/background.jpg);
-      background-position: center;
+      background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
     }
 
-    .container {
-      width: 100vw;
-      height: 100vh;
-    }
-
-    .container > img {
+    main img {
       margin-top: 20px;
     }
 
-    .slogan {
+    main .slogan {
       color: white;
       transform: rotate(-90deg) translateX(-100%);
       position: absolute;
@@ -38,73 +44,84 @@
       height: 25px;
     }
 
-    .footer {
-      font-size: .50rem;
-      color: white;
-      position: absolute;
-      bottom: 5px;
+    footer {
+      height: 45px;
+      background-color: white;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      width: 100%;
     }
 
-    .footer form {
-      margin-bottom: 5px;
+    footer .coming-soon {
+      font-size: 0.7rem;
     }
 
-    .footer form > * {
-      padding: 5px;
+    footer .contact {
+      display: flex;
+      gap: 2rem;
     }
 
-    .footer form input {
-      color: black;
-      background-color: white;
+    footer input {
+      border-bottom: 1px solid black;
+      padding-top: .3rem;
+      padding-bottom: .3rem;
     }
 
-    .footer form input:focus {
-      border: 1px solid black;
+    footer button {
+      height: 30px;
+      padding-left: .4rem;
+      padding-right: .4rem;
     }
 
-    .footer form button {
-      color: black;
-      background-color: #a2887a;
+    footer button:hover {
+      background-color: darkgray;
     }
 
-    .footer form button:hover {
-      color: white;
-      background-color: #1b191e;
+    footer .social {
+      opacity: 50%;
+      display: flex;
+      gap: 1rem;
+      font-size: 2rem;
     }
 
-    @media (min-width: 640px) {
-      .footer {
-        font-size: .70rem;
+    @media (min-width: 1024px) {
+      main {
+        background-position: center;
       }
-     }
 
-     @media (min-width: 768px) {
-      .footer {
+      footer {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      footer .coming-soon {
         font-size: 1rem;
       }
-     }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="./assets/gallery-square.svg" width="121">
-    <div class="slogan">
-      <span>Chaos make the muse.</span>
-    </div>
-    <div class="footer">
-      <div class="form">
-        <form>
-          <input type="email" placeholder="Let me know">
-          <button>by email</button>
-        </form>
+    <main>
+      <img src="./assets/gallery-square.svg" width="121">
+      <div class="slogan"><span>Chaos make the muse.</span></div>
+    </main>
+    <footer>
+      <div class="coming-soon">
+        Fall / Winter '23 available Oct. 16th 20h. CET at rackzgallery.com exclusively
       </div>
-      <span>Fall / Winter '23 available Oct. 16th 20h. CET at rackzgallery.com exclusively</span>
-    </div>
+      <div class="contact">
+        <form>
+          <input type="email" placeholder="Join our newsletter">
+          <button>Sign up</button>
+        </form>
+        <div class="social">
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
