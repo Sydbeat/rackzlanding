@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rackz Gallery v2 - Coming soon</title>
+  <link rel="icon" sizes="auto" href="./assets/logo.svg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     input, button {
@@ -124,11 +125,65 @@
       }
     }
   </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NG984MWYM8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-NG984MWYM8');
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+
+  <script>
+    const submit = async e => {
+      e.preventDefault();
+      // const url = 'http://localhost:8000/mailchimp/rackz/join';
+      // const opts = {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify({ email_address: e.target.email.value })
+      // }
+      // const resp = await fetch(url, opts);
+      // if (resp.ok) {
+      //   console.log('done')
+      // } else {
+      //   console.log(await resp.json())
+      // }
+      confetti({
+        spread: 360,
+        ticks: 200,
+        gravity: 1,
+        decay: 0.94,
+        startVelocity: 30,
+        particleCount: 100,
+        scalar: 3,
+        shapes: ["image"],
+        shapeOptions: {
+          image: [
+            {
+              src: "./assets/logo.svg",
+              width: 32,
+              height: 32,
+            }
+          ]
+        }
+      });
+    }
+
+    window.addEventListener('load', function () {
+      const form = document.getElementById("join");
+      form.addEventListener("submit", submit);
+    });
+  </script>
 </head>
 <body>
   <div class="container">
     <main>
-      <img src="./assets/gallery-square.svg" width="121">
+      <img src="./assets/logo.svg" width="121">
       <div class="slogan"><span>Chaos make the muse.</span></div>
     </main>
     <footer>
@@ -136,8 +191,8 @@
         Fall / Winter '23 available Oct. 16th 20h. CET at rackzgallery.com exclusively
       </div>
       <div class="contact">
-        <form>
-          <input type="email" placeholder="Join our newsletter">
+        <form id="join">
+          <input id="email" type="email" placeholder="Join our newsletter">
           <button>Sign up</button>
         </form>
         <div class="social">
