@@ -45,7 +45,7 @@
     }
 
     footer {
-      height: 45px;
+      height: 70px;
       background-color: white;
       display: flex;
       flex-direction: column;
@@ -54,6 +54,8 @@
 
     footer .coming-soon {
       font-size: 0.7rem;
+      padding-top: 1rem;
+      padding-bottom: 0.5rem;
     }
 
     footer .contact {
@@ -78,10 +80,18 @@
     }
 
     footer .social {
-      opacity: 50%;
       display: flex;
       gap: 1rem;
       font-size: 2rem;
+    }
+
+    footer .social a {
+      opacity: 50%;
+      color: black;
+    }
+
+    footer .social a:hover {
+      opacity: 100%;
     }
 
     @media (min-width: 1024px) {
@@ -90,6 +100,7 @@
       }
 
       footer {
+        height: 45px;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
@@ -97,6 +108,7 @@
 
       footer .coming-soon {
         font-size: 1rem;
+        padding: 0;
       }
     }
   </style>
@@ -117,8 +129,12 @@
           <button>Sign up</button>
         </form>
         <div class="social">
-          <i class="fa-brands fa-youtube"></i>
-          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.youtube.com/@rackzgallery3437" target="_blank">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/rackz_gallery/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
         </div>
       </div>
     </footer>
