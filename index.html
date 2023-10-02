@@ -36,17 +36,17 @@
 
     main .slogan {
       color: white;
-      transform: rotate(-90deg) translateX(-100%);
-      position: absolute;
-      top:0;
-      bottom:0;
-      right: -150px;
-      width: 320px;
-      height: 25px;
+      transform-origin: 100% 100%;
+      position: relative;
+      transform: rotate(270deg);
+      float: right;
+      padding-bottom: 10px;
+      top: 35%;
     }
 
     footer {
-      height: 70px;
+      /* height: 70px; */
+      height: 40px;
       background-color: white;
       display: flex;
       flex-direction: column;
@@ -54,9 +54,12 @@
     }
 
     footer .coming-soon {
-      font-size: 0.7rem;
-      padding-top: 1rem;
-      padding-bottom: 0.5rem;
+      color: white;
+      margin: -20px;
+      font-size: 0.65rem;
+      /* padding-top: 1rem;
+      padding-bottom: 0.5rem; */
+      padding-bottom: 2rem;
     }
 
     footer .contact {
@@ -98,18 +101,13 @@
     @media (min-width: 768px) {
       main .slogan {
         font-size: 1.25rem;
-        right: -140px;
+        top: 32%;
       }
      }
 
     @media (min-width: 1024px) {
       main {
         background-position: center;
-      }
-
-      main .slogan {
-        font-size: 1.25rem;
-        right: -140px;
       }
 
       footer {
@@ -120,6 +118,7 @@
       }
 
       footer .coming-soon {
+        color: black;
         font-size: 1rem;
         padding: 0;
       }
