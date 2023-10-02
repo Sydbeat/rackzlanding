@@ -34,7 +34,7 @@
       margin-top: 20px;
     }
 
-    main .slogan {
+    .slogan {
       color: white;
       transform-origin: 100% 100%;
       position: relative;
@@ -45,26 +45,18 @@
     }
 
     footer {
-      /* height: 70px; */
-      height: 40px;
+      height: 70px;
       background-color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-    footer .coming-soon {
+    .coming-soon {
       color: white;
       margin: -20px;
       font-size: 0.65rem;
-      /* padding-top: 1rem;
-      padding-bottom: 0.5rem; */
       padding-bottom: 2rem;
-    }
-
-    footer .contact {
-      display: flex;
-      gap: 2rem;
     }
 
     footer input {
@@ -83,43 +75,78 @@
       background-color: darkgray;
     }
 
-    footer .social {
+    .contact {
+      width: 100vw;
       display: flex;
-      gap: 1rem;
+      justify-content: space-around;
+    }
+
+    .social {
+      display: flex;
+      gap: 10px;
       font-size: 2rem;
     }
 
-    footer .social a {
+    .social a {
       opacity: 50%;
       color: black;
     }
 
-    footer .social a:hover {
+    .social a:hover {
       opacity: 100%;
     }
 
+    .copy {
+      width: 100vw;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .policies {
+      text-decoration: none;
+      opacity: 50%;
+      color: black;
+    }
+
+    @media (min-width: 640px) {
+      .coming-soon {
+        font-size: 1rem;
+        margin: -22px;
+      }
+    }
+
     @media (min-width: 768px) {
-      main .slogan {
-        font-size: 1.25rem;
-        top: 32%;
-      }
-     }
-
-    @media (min-width: 1024px) {
-      main {
-        background-position: center;
-      }
-
       footer {
-        height: 45px;
-        flex-direction: row;
-        justify-content: space-around;
+        height: 40px;
+      }
+      .foot {
+        width: 100vw;
+        display: flex;
+        justify-content: space-evenly;
         align-items: center;
       }
 
-      footer .coming-soon {
+      .contact {
+        width: auto;
+      }
+
+      .copy {
+        gap: 1rem;
+        width: auto;
+        margin: 0;
+      }
+    }
+
+    @media (min-width: 1175px) {
+      footer {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .coming-soon {
+        width: 1100px;
         color: black;
-        font-size: 1rem;
+        margin: 10px;
         padding: 0;
       }
     }
@@ -189,18 +216,24 @@
       <div class="coming-soon">
         Fall / Winter '23 available Oct. 16th 20h. CET at rackzgallery.com exclusively
       </div>
-      <div class="contact">
-        <form id="join">
-          <input id="email" type="email" placeholder="Join our newsletter">
-          <button>Sign up</button>
-        </form>
-        <div class="social">
-          <a href="https://www.youtube.com/@rackzgallery3437" target="_blank">
-            <i class="fa-brands fa-youtube"></i>
-          </a>
-          <a href="https://www.instagram.com/rackz_gallery/" target="_blank">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+      <div class="foot">
+        <div class="contact">
+          <form id="join">
+            <input id="email" type="email" placeholder="Join our newsletter">
+            <button>Sign up</button>
+          </form>
+          <div class="social">
+            <a href="https://www.youtube.com/@rackzgallery3437" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/rackz_gallery/" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+        <div class="copy">
+          <a href="./policies" class="policies">Privacy policies</a>
+          <div class="copyright">&copy; 2023 Rackz Gallery</div>
         </div>
       </div>
     </footer>
