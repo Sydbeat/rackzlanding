@@ -15,9 +15,11 @@
       font-family: Arial, Helvetica, sans-serif;
       margin: 0;
     }
+
     .container {
       width: 100vw;
       height: 100vh;
+      min-height: -webkit-fill-available;
       display: flex;
       flex-direction: column;
     }
@@ -45,7 +47,6 @@
     }
 
     footer {
-      font-size: .7rem;
       height: 70px;
       background-color: white;
       display: flex;
@@ -99,6 +100,7 @@
     }
 
     .copy {
+      font-size: .7rem;
       width: 100vw;
       display: flex;
       justify-content: space-around;
@@ -114,12 +116,13 @@
     }
 
     @media (min-width: 640px) {
-      footer {
-        font-size: 1rem;
-      }
       .coming-soon {
         font-size: 1rem;
         margin: -22px;
+      }
+
+      .copy {
+        font-size: 1rem;
       }
     }
 
