@@ -27,7 +27,7 @@
     main {
       flex-grow: 1;
       background-image: url(./assets/background.jpg);
-      background-position: 50% 50%;
+      background-position: bottom;
       background-repeat: no-repeat;
       background-size: cover;
     }
@@ -138,27 +138,14 @@
       }
 
       .contact {
-        width: auto;
+        width: 50%;
       }
 
       .copy {
-        gap: 1rem;
+        flex-grow: 1;
+        justify-content: space-around;
         width: auto;
         margin: 0;
-      }
-    }
-
-    @media (min-width: 1175px) {
-      footer {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-
-      .coming-soon {
-        width: 1100px;
-        color: black;
-        margin: 10px;
-        padding: 0;
       }
     }
   </style>
