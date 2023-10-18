@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://symphonious-cannoli-dd52c0.netlify.app/*"
+  to = "https://www.rackzgallery.com/:splat"
+  status = 301
+  force = true
